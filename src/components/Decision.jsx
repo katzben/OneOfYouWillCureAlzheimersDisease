@@ -26,9 +26,6 @@ export default function Decision({ decision, onChoose }) {
 
   const handleChoice = (choice) => {
     setChosen(choice)
-    setTimeout(() => {
-      onChoose(choice)
-    }, 1500)
   }
 
   return (
@@ -46,6 +43,12 @@ export default function Decision({ decision, onChoose }) {
               {chosen.text}
             </p>
             <EffectDisplay effects={chosen.effects} />
+            <button
+              onClick={() => onChoose(chosen)}
+              className="mt-4 px-5 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Continue
+            </button>
           </div>
         </div>
       ) : (
